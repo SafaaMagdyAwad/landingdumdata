@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <title>اختيار الباقة المثالية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tajawal',
+        sans-serif;
+      background: linear-gradient(purple, white);
+      direction: rtl;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius:
+        12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      text-align: center;
+      color: purple;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question p {
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: rgb(223, 132, 223);
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+      padding: 6px 12px;
+      background: #ecf0f1;
+      border-radius: 5px;
+    }
+
+    input[type="radio"] {
+      margin-left: 10px;
+    }
+
+    button {
+      background-color: purple;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: rgb(41, 4, 41);
+    }
+
+    .result {
+      margin-top: 30px;
+      background: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .result h3 {
+      color: purple;
+      margin-bottom: 10px;
+    }
+
+    .result a {
+      background: purple;
+      color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 15px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>اختر الباقة المثالية لك</h2>
+
+
+
+    <div class="question">
+      <p>ما هو عدد اعضاء فريقك؟</p>
+      <label><input type="radio" name="number" value="1"> عضو واحد</label>
+      <label><input type="radio" name="number" value="5"> 5 او اقل</label>
+      <label><input type="radio" name="number" value="20"> 20 او اقل</label>
+    </div>
+
+    <div class="question">
+      <p>ما هو وصف مشروعك</p>
+      <label><input type="radio" name="company" value="start"> مبتدئ \ قطاع صغير</label>
+      <label><input type="radio" name="company" value="mid"> مؤسسات وشركات متوسطه</label>
+      <label><input type="radio" name="company" value="large">مشاريع كبيره</label>
+    </div>
+
+    <button onclick="showRecommendation()">عرض الباقة</button>
+
+    <div class="result" id="resultBox">
+      <h3 id="packageTitle"></h3>
+      <p id="packageDesc"></p>
+      <a href="#" id="packageLink" target="_blank">اشترِ الآن</a>
+    </div>
+  </div>
+
+  <script>
+    function showRecommendation() {
+      const number = document.querySelector('input[name="number"]:checked');
+      const company = document.querySelector('input[name="company"]:checked');
+
+      if (!number || !company) {
+        alert("يرجى الإجابة على جميع الأسئلة");
+        return;
+      }
+
+      let title = "";
+      let desc = "";
+      let link = "#";
+
+      if (company.value === "start" || number.value === "1") {
+        title = "باقة القطاعات الصغيره ";
+        desc = `
+        المميزات
+عدد منتجات وطلبات غير محدود
+
+صلاحية ادارة المتجر لشخص واحد
+
+تحليلات اساسية للمتجر
+
+الربط مع الدفع الإلكتروني
+
+الربط مباشر مع خدمات الشحن
+
+الربط مع تابي وتمارا وMisPay
+
+واجهات متجر متنوعة
+
+دعم 24 ساعة
+        `;
+        link = "https://web.zid.sa/register?_gl=1*16sbyzv*_gcl_au*MTEwNzM3MzM5MS4xNzQ1MzkyMjAz*_ga*MTIwNDU0NzYxMi4xNzQ1MzkyMjA0*_ga_1DER2KFSZD*MTc0NTM5MjIwMy4xLjEuMTc0NTM5MjI3Mi42MC4wLjUzNTk4NzEzNA..&_ga=2.73883410.1892463551.1745392206-1204547612.1745392204";
+      } else if (company.value === "mid" || number.value === "5") {
+        title = "باقة المشاريع المتوسطه ";
+        desc = `
+        المميزات
+كل خصائص باقة لايت
+
+صلاحية إدارة المتجر لـ5 أشخاص
+
+تحليلات متقدمة للمتجر
+
+تمويل زد المرن
+
+ادوات تسويق احترافية
+
+الشراء السريع بواسطة ApplePay
+
+اتمتة عمليات المتجر
+
+تخصيص الواجهة CSS
+
+عرض واحتساب ضريبة القيمة المضافة VAT
+
+الدعم عبر الواتساب 24 ساعة
+        `;
+        link = "https://web.zid.sa/register?_gl=1*1cmhxsy*_gcl_au*MTEwNzM3MzM5MS4xNzQ1MzkyMjAz*_ga*MTIwNDU0NzYxMi4xNzQ1MzkyMjA0*_ga_1DER2KFSZD*MTc0NTM5MjIwMy4xLjEuMTc0NTM5MzMzNC41OC4wLjUzNTk4NzEzNA..&_ga=2.162853308.1892463551.1745392206-1204547612.1745392204";
+      } else if (company.value === "large" || number.value === "20") {
+        title = "باقة المشاريع الكبيره ";
+        desc = `
+        المميزات
+كل خصائص باقة زد نمو
+
+صلاحية ادارة المتجر ل20 شخص
+
+تحليلات تفصيلية للطلبات والعملاء
+
+اصدار وطباعة تقارير المبيعات
+
+اضافة وادارة السحب من 5 مخازن
+
+البيع واصدار فواتير الجملة B2B
+
+واجهة متجر خاصة عبر Theme SDK
+
+برنامج الولاء
+
+اضافة ضرائب متعددة حسب الدولة
+
+الربط المباشر عبر زد API
+
+اولوية الدعم 24/7
+        `;
+        link = "https://zid.sa/ar/contact-sales";
+      } else {
+        title = "باقة مخصصة لك";
+        desc = "مجموعة متنوعة بناءً على إجاباتك، اختر الأفضل وابدأ رحلتك.";
+        link = "https://yourstore.zid.store/cart/add/999:1";
+      }
+
+      document.getElementById("packageTitle").textContent = title;
+      document.getElementById("packageDesc").textContent = desc;
+      document.getElementById("packageLink").href = link;
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+
+</body>
+
+</html>
