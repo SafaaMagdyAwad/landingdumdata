@@ -1,229 +1,136 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
   <title>اختيار الباقة المثالية</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<!-- Bootstrap 5 RTL CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Tajawal',
-        sans-serif;
-      background: linear-gradient(purple, white);
-      direction: rtl;
-      padding: 20px;
-      color: #333;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius:
-        12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-    }
-
-    h2 {
-      text-align: center;
-      color: purple;
-    }
-
-    .question {
-      margin-bottom: 25px;
-    }
-
-    .question p {
-      margin-bottom: 10px;
-      font-weight: bold;
-      color: rgb(223, 132, 223);
-      text-align: center;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      cursor: pointer;
-      padding: 6px 12px;
-      background: #ecf0f1;
-      border-radius: 5px;
-    }
-
-    input[type="radio"] {
-      margin-left: 10px;
-    }
-
-    button {
-      background-color: purple;
+    .bg-darkblue {
+      background-color: darkblue;
       color: white;
-      padding: 14px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
     }
-
-    button:hover {
-      background-color: rgb(41, 4, 41);
+    .text-darkblue{
+      color: darkblue;
     }
-
-    .result {
-      margin-top: 30px;
-      background: #ecf0f1;
-      padding: 20px;
-      border-radius: 10px;
-      display: none;
+    .border-darkblue{
+      border: 1px solid darkblue;
     }
-
-    .result h3 {
-      color: purple;
-      margin-bottom: 10px;
+    .card img{
+      height: 200px;
     }
-
-    .result a {
-      background: purple;
-      color: white;
-      padding: 10px 20px;
-      display: inline-block;
-      border-radius: 5px;
-      margin-top: 15px;
-      text-decoration: none;
+    .footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
     }
+    
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h2>اختر الباقة المثالية لك</h2>
+  <nav class="navbar navbar-expand-lg bg-darkblue  justify-content-center">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="index.html"><img src="./pexels-jan-van-der-wolf-11680885-19748645.jpg" style="width: 70px; height: 70px; border-radius: 50%;" alt=""></a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="#products">المنتجات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#contact">تواصل معنا</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#pricing">خطط الاسعار</a>
+          </li>
 
-
-
-    <div class="question">
-      <p>ما هو عدد اعضاء فريقك؟</p>
-      <label><input type="radio" name="number" value="1"> عضو واحد</label>
-      <label><input type="radio" name="number" value="5"> 5 او اقل</label>
-      <label><input type="radio" name="number" value="20"> 20 او اقل</label>
+        </ul>
+      </div>
     </div>
-
-    <div class="question">
-      <p>ما هو وصف مشروعك</p>
-      <label><input type="radio" name="company" value="start"> مبتدئ \ قطاع صغير</label>
-      <label><input type="radio" name="company" value="mid"> مؤسسات وشركات متوسطه</label>
-      <label><input type="radio" name="company" value="large">مشاريع كبيره</label>
-    </div>
-
-    <button onclick="showRecommendation()">عرض الباقة</button>
-
-    <div class="result" id="resultBox">
-      <h3 id="packageTitle"></h3>
-      <p id="packageDesc"></p>
-      <a href="#" id="packageLink" target="_blank">اشترِ الآن</a>
+  </nav>
+  <div class="container text-center">
+    <div class="prdoucts ">
+      <div class="row row-gap-5">
+        <h1 class="text-center text-darkblue p-5">منتجاتنا</h1>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img src="./cars/car (1).jpg" class=" card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">product 1</h5>
+              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus totam quam ullam, ratione incidunt adipisci soluta sed suscipit. Sit.</p>
+              <a href="#" class="btn btn-primary">see details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img src="./cars/car (2).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">product 2</h5>
+              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus totam quam ullam, ratione incidunt adipisci soluta sed suscipit. Sit.</p>
+              <a href="#" class="btn btn-primary">see details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img src="./cars/car (3).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">product 3</h5>
+              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus totam quam ullam, ratione incidunt adipisci soluta sed suscipit. Sit.</p>
+              <a href="#" class="btn btn-primary">see details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img src="./cars/car (4).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">product 4</h5>
+              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus totam quam ullam, ratione incidunt adipisci soluta sed suscipit. Sit.</p>
+              <a href="#" class="btn btn-primary">see details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img src="./cars/car (5).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">product 5</h5>
+              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus totam quam ullam, ratione incidunt adipisci soluta sed suscipit. Sit.</p>
+              <a href="#" class="btn btn-primary">see details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;">
+            <img src="./cars/car (4).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">product 4</h5>
+              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum accusamus totam quam ullam, ratione incidunt adipisci soluta sed suscipit. Sit.</p>
+              <a href="#" class="btn btn-primary">see details</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <script>
-    function showRecommendation() {
-      const number = document.querySelector('input[name="number"]:checked');
-      const company = document.querySelector('input[name="company"]:checked');
-
-      if (!number || !company) {
-        alert("يرجى الإجابة على جميع الأسئلة");
-        return;
-      }
-
-      let title = "";
-      let desc = "";
-      let link = "#";
-
-      if (company.value === "start" || number.value === "1") {
-        title = "باقة القطاعات الصغيره ";
-        desc = `
-        المميزات
-عدد منتجات وطلبات غير محدود
-
-صلاحية ادارة المتجر لشخص واحد
-
-تحليلات اساسية للمتجر
-
-الربط مع الدفع الإلكتروني
-
-الربط مباشر مع خدمات الشحن
-
-الربط مع تابي وتمارا وMisPay
-
-واجهات متجر متنوعة
-
-دعم 24 ساعة
-        `;
-        link = "https://web.zid.sa/register?_gl=1*16sbyzv*_gcl_au*MTEwNzM3MzM5MS4xNzQ1MzkyMjAz*_ga*MTIwNDU0NzYxMi4xNzQ1MzkyMjA0*_ga_1DER2KFSZD*MTc0NTM5MjIwMy4xLjEuMTc0NTM5MjI3Mi42MC4wLjUzNTk4NzEzNA..&_ga=2.73883410.1892463551.1745392206-1204547612.1745392204";
-      } else if (company.value === "mid" || number.value === "5") {
-        title = "باقة المشاريع المتوسطه ";
-        desc = `
-        المميزات
-كل خصائص باقة لايت
-
-صلاحية إدارة المتجر لـ5 أشخاص
-
-تحليلات متقدمة للمتجر
-
-تمويل زد المرن
-
-ادوات تسويق احترافية
-
-الشراء السريع بواسطة ApplePay
-
-اتمتة عمليات المتجر
-
-تخصيص الواجهة CSS
-
-عرض واحتساب ضريبة القيمة المضافة VAT
-
-الدعم عبر الواتساب 24 ساعة
-        `;
-        link = "https://web.zid.sa/register?_gl=1*1cmhxsy*_gcl_au*MTEwNzM3MzM5MS4xNzQ1MzkyMjAz*_ga*MTIwNDU0NzYxMi4xNzQ1MzkyMjA0*_ga_1DER2KFSZD*MTc0NTM5MjIwMy4xLjEuMTc0NTM5MzMzNC41OC4wLjUzNTk4NzEzNA..&_ga=2.162853308.1892463551.1745392206-1204547612.1745392204";
-      } else if (company.value === "large" || number.value === "20") {
-        title = "باقة المشاريع الكبيره ";
-        desc = `
-        المميزات
-كل خصائص باقة زد نمو
-
-صلاحية ادارة المتجر ل20 شخص
-
-تحليلات تفصيلية للطلبات والعملاء
-
-اصدار وطباعة تقارير المبيعات
-
-اضافة وادارة السحب من 5 مخازن
-
-البيع واصدار فواتير الجملة B2B
-
-واجهة متجر خاصة عبر Theme SDK
-
-برنامج الولاء
-
-اضافة ضرائب متعددة حسب الدولة
-
-الربط المباشر عبر زد API
-
-اولوية الدعم 24/7
-        `;
-        link = "https://zid.sa/ar/contact-sales";
-      } else {
-        title = "باقة مخصصة لك";
-        desc = "مجموعة متنوعة بناءً على إجاباتك، اختر الأفضل وابدأ رحلتك.";
-        link = "https://yourstore.zid.store/cart/add/999:1";
-      }
-
-      document.getElementById("packageTitle").textContent = title;
-      document.getElementById("packageDesc").textContent = desc;
-      document.getElementById("packageLink").href = link;
-      document.getElementById("resultBox").style.display = "block";
-    }
-  </script>
+<div class="footer bg-darkblue ">
+  <p>copy &copy;  all right reservid</p>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
 
 </body>
 
