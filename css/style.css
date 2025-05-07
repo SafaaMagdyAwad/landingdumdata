@@ -1,0 +1,58 @@
+
+
+.text-ofwhite {
+  color: #f5eedc;
+}
+
+.bg-ofwhite {
+  background-color: #f5eedc;
+}
+
+.text-darkblue {
+  color: #183b4e;
+}
+
+.bg-darkblue {
+  background-color: #183b4e;
+}
+
+.bg-blue {
+  background-color: #183b4e;
+}
+
+.text-lightblue {
+  color: #27548a;
+}
+
+.bg-lightblue {
+  background-color: #27548a;
+}
+
+.text-cofee {
+  color: #dda853;
+}
+
+.bg-cofee {
+  background-color: #dda853;
+}
+
+.border-cofee {
+  border: 1px solid #dda853;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
